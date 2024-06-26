@@ -1,0 +1,80 @@
+{% extends 'siteapp/base.html' %}
+
+{% load static %}
+{% block title %}
+  Home Page
+{% endblock %}
+{% block banner %}
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'siteapp/images/banner/b1.jpg' %}" class="d-block w-100" alt="Banner 1" />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Welcome to Our Recruitment Service</h5>
+          <p>Your gateway to finding the best job opportunities.</p>
+        </div>
+      </div>
+      <div class="carousel-item"> 
+        <img src="{% static 'siteapp/images/banner/b2.jpg' %}" class="d-block w-100" alt="Banner 2" />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Explore Job Opportunities</h5>
+          <p>Discover a variety of roles in different industries.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'siteapp/images/banner/b3.jpg' %}" class="d-block w-100" alt="Banner 3" />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Connect with Top Employers</h5>
+          <p>Get hired by the best companies in the industry.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block information %}
+  <div class="container mt-5">
+    <div class="text-center p-5 shadow-sm rounded-3 bg-light">
+      <h1>Our Services</h1>
+      <p class="fs-5 text-muted">We provide a range of recruitment services to help you find your dream job. From web development to cloud computing, we have it all.</p>
+    </div>
+  </div>
+{% endblock %}
+
+{% block main %}
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">Job Categories</h1>
+    <div class="row">
+      <div class="col-md-4 col-sm-6 mb-4">
+        <div class="card h-100 shadow-sm border-0">
+          <a href="{% url 'category' 'web' %}">
+            <img src="{% static 'siteapp/images/product/p1.png' %}" class="card-img-top" alt="Web Development" />
+            <div class="card-body text-center">
+              <h5 class="card-title">Web Development Jobs</h5>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 mb-4">
+        <div class="card h-100 shadow-sm border-0">
+          <a href="{% url 'category' 'networking' %}">
+            <img src="{% static 'siteapp/images/product/p2.png' %}" class="card-img-top" alt="Networking" />
+            <div class="card-body text-center">
+              <h5 class="card-title">Networking Jobs</h5>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 mb-4">
+        <div class="card h-100 shadow-sm border-0">
+          <a href="{% url 'category' 'cloud' %}">
+            <img src="{% static 'siteapp/images/product/p3.png' %}" class="card-img-top" alt="Cloud Computing" />
+            <div class="card-body text-center">
+              <h5 class="card-title">Cloud Computing Jobs</h5>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

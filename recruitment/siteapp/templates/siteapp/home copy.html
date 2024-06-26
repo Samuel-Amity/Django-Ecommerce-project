@@ -1,0 +1,72 @@
+{% extends 'kar/base.html' %}
+
+{% load static %}
+{% block title %}
+  Home Page
+{% endblock %}
+{% block banner %}
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" height>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'kar/images/banner/b1.png' %}" class="d-block w-100" style="height: 50%;" />
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'kar/images/banner/b2.png' %}" class="d-block w-100" style="height: 50%;" />
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'kar/images/banner/b3.png' %}" class="d-block w-100" style="height: 50%;" />
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block information %}
+  <div class="container">
+    <div class="row-bg-success text-center p5 text-white bg-dark border-bottom shadow">
+      <h1>products</h1>
+      <p class="fs-5">a device that uses either a system of wires along which electrical signals are sent or a system of radio signals to make it possible for you to speak to someone in another place who has a similar device: Just then, his phone rang.</p>
+    </div>
+  </div>
+{% endblock %}
+
+{% block main %}
+  <div class="container">
+    <h1 class="text-center">Phone</h1>
+  </div>
+  <br /><br />
+  <div class="row container">
+    <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s" style="animation-duration: 1s; animation-delay: 0.6s;
+    animation-name: none;">
+      <div class="goodness smbg">
+        <a href="{% url 'category' 'ap' %}">
+          <div class="goodnesssecont text-center">
+            <img src="{% static 'kar/images/product/p1.png' %}" class="img-responsive" alt="" />
+            <p class="mlkpro">Iphone</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s" style="animation-duration: 1s; animation-delay: 0.6s;
+    animation-name: none;">
+      <div class="goodness smbg">
+        <a href="{% url 'category' 'xi' %}">
+          <div class="goodnesssecont text-center">
+            <img src="{% static 'kar/images/product/p2.png' %}" class="img-responsive" alt="" />
+            <p class="mlkpro">MI</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s" style="animation-duration: 1s; animation-delay: 0.6s;
+    animation-name: none;">
+      <div class="goodness smbg">
+        <a href="{% url 'category' 'sm' %}">
+          <div class="goodnesssecont text-center">
+            <img src="{% static 'kar/images/product/p4.png' %}" class="img-responsive" alt="" />
+            <p class="mlkpro">Samsung</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

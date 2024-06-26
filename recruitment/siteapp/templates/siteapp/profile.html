@@ -1,0 +1,54 @@
+{% extends 'kar/base.html' %}
+
+{% load static %}
+{% block title %}
+  category
+{% endblock %}
+
+{% block main %}
+  <div class="container my-5">
+    <div class="row my-3">
+      <h3>Welcome <span class="text-capitalize">{{ request.user.username }}</span></h3>
+      <div class="col-sm-2 border-end">
+        <ul class="list-unstyled">
+          <li class="d-grid">
+            <a href="{% url 'profile' %}" class="btn btn-primary">Profile</a>
+          </li>
+          <li class="d-grid">
+            <a href="{% url 'address' %}" class="btn btn-primary">Address</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-sm-8 offset-sm-2 shadow p-5">
+        <form action="" method="post">
+          {% csrf_token %}
+          {% for field in form %}
+            <div class="mb-3">
+              {{ field.label_tag }}
+              {{ field }}
+              {% if field.error %}
+                <small class="text-danger">{{ field.error|striptags }}</small>
+              {% endif %}
+            </div>
+          {% endfor %}
+          <div class="col-12 mt-3">
+            <button type="submit" class="btn btn-success">Submit</button>
+          </div>
+          {% if form.non_field_errors %}
+            <div class="alert alert-danger mt-3">
+              {% for error in form.non_field_errors %}
+                {{ error }}
+              {% endfor %}
+            </div>
+          {% endif %}
+
+          {% if messages %}
+            {% for messages in messages %}
+              <div class="alert alert-{{ message.tags }}" role="alert">{{ messages }}</div>
+            {% endfor %}
+          {% endif %}
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}
